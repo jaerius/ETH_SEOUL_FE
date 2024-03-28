@@ -1,30 +1,59 @@
-import logo from './logo.svg';
+import { Stack, MantineProvider } from "@mantine/core";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import { Stack, MantineProvider } from "@mantine/core"
 
+function HomeScreen() {
+  const [selectedTab, setSelectedTab] = useState('home');
+  const [searchText, setSearchText] = useState('');
+  // Filtered idols list would remain the same logic-wise
+  const filteredIdols = []; // Simplified for example
+  // Function to highlight text remains mostly the same but returns React elements
+
+  return (
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <Stack spacing={24}>
+        {/* Router removed from here */}
+        <div className="container">
+          <header className="header">
+            <h1>FAVPICK</h1>
+            <button>MenuIcon</button> {/* Example placeholder for menu icon */}
+          </header>
+
+          {/* Simplified navigation and content rendering */}
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/artist">Artist</Link>
+          </nav>
+
+          <main>
+            {selectedTab === 'home' && (
+              <div>This is Home page</div>
+            )}
+            {/* Artist tab content would be similar */}
+          </main>
+
+          {/* Simplified footer navigation */}
+          <footer>
+            <button>Home</button>
+            <button>Chat</button>
+            <button>User</button>
+            <button>Vote</button>
+          </footer>
+        </div>
+      </Stack>
+    </MantineProvider>
+  );
+}
 
 function App() {
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-    <Stack spacing={24}>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    </Stack>
-    </MantineProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        {/* Define routes for other components here */}
+      </Routes>
+    </Router>
   );
 }
 
