@@ -22,7 +22,7 @@ const communityData = [
 
 export default function CommunityPage() {
   const settings = {
-    
+     
     dots: true,
     infinite: false,
     speed: 500,
