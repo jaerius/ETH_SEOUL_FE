@@ -6,6 +6,9 @@ import { init, useConnectWallet } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
 import { ethers } from "ethers"; 
 import { useState, useEffect} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 //import { providers } from 'ethers';
 //import abi from "./abi";
 
@@ -60,12 +63,30 @@ init({
 function LoginPage() {
     
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (wallet) {
       // Now we are sure that wallet object is available
-      console.log(wallet.accounts[0].address);
+      const walletAddress = wallet.accounts[0].address
+
+      axios.post('/api/user/login', { address: walletAddress })
+        .then(response => {
+          // 백엔드에서 응답 받음
+          if (response.data._id) {
+            // 등록된 주소일 경우
+            navigate('../Mainpage/Mainpage');
+          } else {
+            // 등록되지 않은 주소일 경우
+            navigate('/RegisterPage');
+          }
+        })
+        .catch(error => {
+          error.navigate('/RegisterPage')
+        });
       // 월렛 주소 백으로 보내주기
+      //
     }
   }, [wallet]);
 
@@ -73,9 +94,6 @@ function LoginPage() {
   if (wallet) {
     ethersProvider = new ethers.providers.Web3Provider(wallet.provider, "any"); //ethers.BrowserProvider in v6
   }
-  const CA = "0x96DefAc7d1E8F0F4258779A8343c97850C6de7fa";
-
-  
 
     return(
           <div className="LoginPage">

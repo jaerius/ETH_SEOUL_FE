@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+.LoginPage .content-wrapper .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 100vh;
+}
+
+.LoginPage .content-wrapper .content .glass{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 297px;
+    height: 334px;
+    left: calc(50% - 297px/2);
+    top: calc(50% - 334px/2);
+
+    background: radial-gradient(89.39% 90.42% at 12.46% 9.58%, rgba(255, 255, 255, 0.025) 0%, rgba(255, 252, 242, 0.025) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border: 1px solid #F0EEF2;
+    box-shadow: 0px 5px 22.4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 58px;
+}
+
+
+.LoginPage .content-wrapper .content .glass .name {
+    
+    margin-bottom: 10px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    justify-content: center;
+}
+
+/* Rectangle 15988 */
+.LoginPage .content-wrapper .content .glass .nickname,
+.LoginPage .content-wrapper .content .glass .email {
+ 
+  width: 70%; /* Increase input width */
+  padding: 12px; /* Increase padding for larger size */
+  margin: 10px 0; /* Maintain vertical spacing */
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 5px; /* Rounded borders */
+  color: #000; /* Text color */
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Slight border for visibility */
+}
+
+/* Placeholder styling */
+.LoginPage .content-wrapper .content .glass .nickname::placeholder,
+.LoginPage .content-wrapper .content .glass .email::placeholder {
+  color: rgba(255, 255, 255, 0.75); /* Lighter color for placeholder text */
+}
+
+/* Remove outline on focus */
+.LoginPage .content-wrapper .content .glass .nickname:focus,
+.LoginPage .content-wrapper .content .glass .email:focus {
+  outline: none;
+}
+
+.LoginPage .content-wrapper .content .glass .button1 {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #FFFFFF, #BBCEFF);
+    color: #676161ea;
+    outline: none;
+    margin-top : 10px;
+     
+  }
