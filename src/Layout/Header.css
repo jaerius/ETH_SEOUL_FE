@@ -1,0 +1,21 @@
+.header {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
+    width: 350px; /* .content-wrapper의 padding을 고려한 너비 */
+    height: 50px; /* 원하는 높이입니다 */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute; /* 절대 위치 지정 */
+    top: 0rem; /* 아래쪽에서 1rem만큼 떨어진 위치에 배치 */
+    left: 50%; /* 중앙에 위치 */
+    transform: translateX(-50%);
+    justify-content: space-between; /* 이 부분을 space-around로 변경하세요 */
+    margin-bottom: 10px;
+
+    .name{
+        color:#172FFF;
+    }
+  }
