@@ -38,14 +38,10 @@ export const ContentWrapper = ({ children }) => {
 export const LogoAndHead = ({ onProfileClick }) => {
   return (
     <div className="logo-and-head">
-      <img src="/path/to/logo.png" alt="Logo" />
-      <h1>Site Name</h1>
-      <img
-        src="/path/to/profile-pic.png"
-        alt="Profile"
-        onClick={onProfileClick}
-        style={{ cursor: 'pointer' }}
-      />
+      <div className="logo">FAVPICK</div>
+      <div className="profile-pic">Profile Pic</div>
     </div>
   );
 };
+
+

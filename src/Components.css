@@ -36,3 +36,30 @@
     transform: translate(0%, 0%); /* 필요에 따라 조정 */
     margin-top: 30px; /* margin-top을 적용하려면 position을 absolute로 변경해야 합니다 */
 }
+
+.logo-and-head {
+  display: flex;
+  flex-direction: column; /* 이 부분을 추가하여 자식들을 세로로 정렬 */
+  justify-content: center; /* 세로 축에서 중앙 정렬 */
+  align-items: center; /* 가로 축에서 중앙 정렬 */
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.logo {
+  font-size: 24px; /* 로고 텍스트 크기 */
+  font-weight: bold;
+  color: #000000; /* 로고 텍스트 색상 */
+  margin-bottom: 20px; /* 로고와 프로필 사진 사이의 간격 */
+}
+
+.profile-pic {
+  width: 50px; /* 프로필 사진의 너비 */
+  height: 50px; /* 프로필 사진의 높이 */
+  background-size: cover; /* 이미지가 div에 꽉 차도록 */
+  background-position: center; /* 이미지를 중앙에 배치 */
+  border-radius: 50%; /* 원형으로 만들기 */
+  cursor: pointer;
+}
+
+

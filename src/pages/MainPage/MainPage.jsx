@@ -7,7 +7,7 @@ function MainPage() {
         <div className="MainPage">
             <ContentWrapper>
             <GoBack/>
-                
+            <LogoAndHead/>
             </ContentWrapper>
             <BottomSidebar/>
         </div>
