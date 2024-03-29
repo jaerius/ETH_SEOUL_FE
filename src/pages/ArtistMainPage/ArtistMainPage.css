@@ -1,0 +1,21 @@
+.ArtistMainPage{
+    width:100%;
+    height: 100%;
+}
+
+.ArtistMainPageidolImg{
+    background-color: lightblue;
+    display:flex;
+    width:100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ArtistMainPageidolInfo{
+
+}
+
+.ArtistMainPageContent{
+
+}

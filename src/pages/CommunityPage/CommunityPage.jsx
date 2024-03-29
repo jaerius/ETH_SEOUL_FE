@@ -1,9 +1,9 @@
-import './CommunityPage.css'
-import { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick'; // Slider 컴포넌트 import
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
-import Headers from '../../Layout/Header'
+import Headers from '../../Layout/Header';
+import './CommunityPage.css';
 
 
 const communityData = [
@@ -21,6 +21,13 @@ const communityData = [
 
 
 export default function CommunityPage() {
+
+  const navigate = useNavigate(); // Hook to get the navigate function
+
+  const handleCommunityClick = (communityId) => {
+    navigate(`/Community/${communityId}`); // Navigate to CommunityMain with the community ID
+  };
+
    const settings = {
     dots: true,
     infinite: false,
@@ -47,6 +54,8 @@ export default function CommunityPage() {
     ]
   };
 
+
+  
   return (
     <ContentWrapper>
       <div className="CommunityPage">
@@ -54,7 +63,11 @@ export default function CommunityPage() {
           <div className="MyCommunityTitle">My Community</div>
           <Slider {...settings}> {/* Slider 컴포넌트 사용 */}
             {communityData.map((community) => (
-              <div key={community.id} className="Community">
+              <div
+              key={community.id}
+              className="Community"
+              onClick={() => handleCommunityClick(community.id)} // Click handler to navigate
+            >
                 <div className="MyCommunityImg">
                   {community.MyCommunityImg}
                 </div>
