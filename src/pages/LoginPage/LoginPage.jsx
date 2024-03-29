@@ -9,9 +9,6 @@ import { useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-//import { providers } from 'ethers';
-//import abi from "./abi";
-
 // 1. 지갑 모듈
 const wallets = [injectedModule()];
 

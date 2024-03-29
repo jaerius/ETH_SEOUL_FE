@@ -1,4 +1,4 @@
-import { Stack, MantineProvider } from "@mantine/core";
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from "./pages/LoginPage/LoginPage"
@@ -10,6 +10,7 @@ import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import Sidebar from "./Layout/Sidebar"
 import './App.css';
 import RegisterPage from "./pages/LoginPage/RegisterPage";
+import { MantineProvider } from '@mantine/core';
 
 function App() {
 
@@ -23,12 +24,14 @@ function App() {
   }, []);
 
   return (
+      <MantineProvider>
         <div className="Home">
         <Router>
           <Routes>
             <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate replace to="/LoginPage" />} />
             <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/RegisterPage" element={<RegisterPage/>}/>
+            <Route path="/CommunityPage" element={<CommunityPage/>}/>
             <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
             <Route path="/VotePage" element={isLoggedIn ? <VotePage /> : <Navigate replace to="/LoginPage" />} />
           </Routes>
@@ -44,6 +47,7 @@ function App() {
           </div>
        */}
         </div>
+      </MantineProvider>
   );
 }
 

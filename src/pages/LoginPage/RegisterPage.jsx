@@ -14,8 +14,8 @@ function RegisterPage() {
                     <div className="name">FAVPICK</div>
                     <input className="nickname" type='text' placeholder='Nickname' />
                     <input className="email" type='text' placeholder='Email' />
-                    <button className="button1" onClick={()=>navigate('../Mainpage/Mainpage')}>Create Account</button>
-                </div>             
+                    <button className="button1" onClick={()=>navigate('../')}>Create Account</button>
+                </div> {/*여기서 axios로 백엔드에 정보 넘겨줘서 user테이블 생성하기*/}            
                 </div>
             </div>
             </div>
