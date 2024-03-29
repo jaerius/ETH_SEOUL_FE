@@ -1,44 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-.LoginPage .content-wrapper  .button1 {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    outline: none;
-    margin-top: -100px;
-    }
-    
 
+.LoginPage .content-wrapper .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 100vh;
+}
+
+.LoginPage .content-wrapper .content .name {
+  margin-bottom: 10px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+}
+
+.LoginPage .content-wrapper .content .button1 {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right, #FFFFFF, #BBCEFF);
+  color: #676161ea;
+  outline: none;
   
-  .settings-notification {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .icon-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .card-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    position: relative;
-    transition: all 0.3s;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s;
-  
-  }
+}
