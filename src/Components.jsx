@@ -1,4 +1,5 @@
 import React from 'react';
+import './Components.css';
 import { useNavigate } from 'react-router-dom';
 
 // GoBack 컴포넌트
@@ -38,8 +39,12 @@ export const ContentWrapper = ({ children }) => {
 export const LogoAndHead = ({ onProfileClick }) => {
   return (
     <div className="logo-and-head">
-      <div className="logo">FAVPICK</div>
-      <div className="profile-pic">Profile Pic</div>
+      <div className="logo">
+        FAVPICK
+      </div>
+      <div className="profile-pic">
+        Profile Pic
+      </div>
     </div>
   );
 };
