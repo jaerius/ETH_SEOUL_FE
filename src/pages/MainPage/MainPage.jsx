@@ -4,10 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
 import './MainPage.css'
 import Headers from '../../Layout/Header'
+import Sidebar from '../../Layout/Sidebar';
 
 const idolsData = [
-    { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "profileImg1" },
-    { id: 2, name: "Park Jimin", agency: "BTS", profileImg: "profileImg2" },
+    { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "" },
+    { id: 2, name: "Park Jimin", agency: "BTS", profileImg: "" },
     { id: 3, name: "Kang Daniel", agency: "KONNECT Entertainment", profileImg: "profileImg3" },
     { id: 4, name: "Lee Chaeyeon", agency: "WM Entertainment", profileImg: "profileImg4" },
     { id: 5, name: "Miyawaki Sakura", agency: "HKT48", profileImg: "profileImg5" },
@@ -22,8 +23,10 @@ const idolsData = [
     return (
       <ContentWrapper>
         <Headers/>
-        <div className="container">
-            <input type="text" placeholder="Type here" className="input" />
+        <div className="FancyRanking">Fancy Ranking</div>
+        <input type="text" placeholder="Type here" className="input" />
+
+          <div className="MainPage">    
             {idolsData.map(idol => (
             <div key={idol.id} className="Artistcontents">
                 <div className="ProfileImg">
@@ -39,8 +42,8 @@ const idolsData = [
                 </div>
             </div>
             ))}
-        </div>
-        <BottomSidebar/>
+          </div>
+        <Sidebar/>
       </ContentWrapper>
     );
   }

@@ -1,23 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .header {
-    background-color: #FFFFFF;
+    background-color: transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* This will push .name to the left and .logo to the right */
     align-items: center;
-    padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
-    width: 350px; /* .content-wrapper의 padding을 고려한 너비 */
-    height: 50px; /* 원하는 높이입니다 */
+    padding: 0.5rem 1.5rem;
+    width: 350px;
+    height: 50px;
     border-radius: 20px;
+    border-color: transparent;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    position: absolute; /* 절대 위치 지정 */
-    top: 0rem; /* 아래쪽에서 1rem만큼 떨어진 위치에 배치 */
-    left: 50%; /* 중앙에 위치 */
+    position: absolute;
+    top: 0rem;
+    left: 50%;
     transform: translateX(-50%);
-    justify-content: space-between; /* 이 부분을 space-around로 변경하세요 */
-    margin-bottom: 10px;
+}
 
-    .name{
-        color:#172FFF;
-    }
+.header .name {
+    color: #172FFF;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: bold;
+    margin-right: auto; /* This ensures .name stays at the start/left side */
+}
 
-    
-  }
+.header .logo {
+    font-family: 'Pretendard', sans-serif;
+    margin-left: 220px; /* This ensures .logo stays at the end/right side */
+}
