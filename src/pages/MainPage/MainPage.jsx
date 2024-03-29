@@ -9,20 +9,21 @@ import Sidebar from '../../Layout/Sidebar';
 const idolsData = [
     { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "" },
     { id: 2, name: "Park Jimin", agency: "BTS", profileImg: "" },
-    { id: 3, name: "Kang Daniel", agency: "KONNECT Entertainment", profileImg: "profileImg3" },
-    { id: 4, name: "Lee Chaeyeon", agency: "WM Entertainment", profileImg: "profileImg4" },
-    { id: 5, name: "Miyawaki Sakura", agency: "HKT48", profileImg: "profileImg5" },
-    { id: 6, name: "Choi Yena", agency: "Yuehua Entertainment", profileImg: "profileImg6" },
-    { id: 7, name: "Kwon Eunbi", agency: "Woollim Entertainment", profileImg: "profileImg7" },
-    { id: 8, name: "Kim Minju", agency: "Urban Works Media", profileImg: "profileImg8" },
-    { id: 9, name: "Ahn Yujin", agency: "Starship Entertainment", profileImg: "profileImg9" },
-    { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profileImg: "profileImg10" }
+    { id: 3, name: "Kang Daniel", agency: "KONNECT Entertainment", profileImg: "" },
+    { id: 4, name: "Lee Chaeyeon", agency: "WM Entertainment", profileImg: "" },
+    { id: 5, name: "Miyawaki Sakura", agency: "HKT48", profileImg: "" },
+    { id: 6, name: "Choi Yena", agency: "Yuehua Entertainment", profileImg: "" },
+    { id: 7, name: "Kwon Eunbi", agency: "Woollim Entertainment", profileImg: "" },
+    { id: 8, name: "Kim Minju", agency: "Urban Works Media", profileImg: "" },
+    { id: 9, name: "Ahn Yujin", agency: "Starship Entertainment", profileImg: "" },
+    { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profileImg: "" }
   ];
 
   export default function ArtistPage() {
     return (
       <ContentWrapper>
         <Headers/>
+        
         <div className="FancyRanking">Fancy Ranking</div>
         <input type="text" placeholder="Type here" className="input" />
 

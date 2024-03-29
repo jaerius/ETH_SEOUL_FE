@@ -10,7 +10,7 @@
     height: 50px;
     border-radius: 20px;
     border-color: transparent;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     position: absolute;
     top: 0rem;
     left: 50%;
@@ -21,6 +21,7 @@
     color: #172FFF;
     font-family: 'Pretendard', sans-serif;
     font-weight: bold;
+    font-size: 18px;
     margin-right: auto; /* This ensures .name stays at the start/left side */
 }
 

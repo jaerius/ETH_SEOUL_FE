@@ -3,19 +3,22 @@
 .FancyRanking{
     color: white;
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 35vh;
     margin-bottom: -8px;
     font-family: 'Pretendard', sans-serif;
     display: flex;
     justify-content: start;
+    margin-right: 170px;
+    
 }
 .input {
     margin-top: 20px;
-    width: 100%;
+    width: 80%;
     padding: 0.5rem;
     
     border-radius: 20px;
     border: 1px solid #ced4da;
+    margin-bottom: -20px;
   }
 
 .MainPage .Artistcontents{
@@ -25,6 +28,7 @@
   padding: 0.5rem 0;
   border-bottom: 1px solid #ced4da;
   margin-top: -10px;
+  width: 52vw;
     
 }
 
@@ -48,10 +52,11 @@
 }
 
 .MainPage .name {
-    flex: 2; /* info 내에서 name이 agency의 두 배의 크기를 가짐 */
+    flex: 4; /* info 내에서 name이 agency의 두 배의 크기를 가짐 */
     display: flex;
     align-items: center; /* 세로 중앙 정렬 */
     font-size:20px;
+
 }
 
 .MainPage .agency {
@@ -66,10 +71,12 @@
     background: transparent;
     padding: 1rem;
     border-radius: 8px;
-    max-width: 450px; /* or your preferred width */
+    max-width: 80vw; /* or your preferred width */
     margin: 25px auto 0;
     overflow: auto;
     font-family: 'Pretendard', sans-serif;
+    overflow-y: scroll;
+    max-height: 50vh;
 
   }
 
@@ -82,7 +89,7 @@
   
 /* 스크롤바 전체 컨테이너를 위한 스타일 */
 .MainPage::-webkit-scrollbar {
-    width: 12px; /* 스크롤바의 너비 */
+    width: 11px; /* 스크롤바의 너비 */
 }
 
 /* 스크롤바 트랙(바탕)을 위한 스타일 */
@@ -92,12 +99,13 @@
 
 /* 스크롤바 핸들(움직이는 부분)을 위한 스타일 */
 .MainPage::-webkit-scrollbar-thumb {
-    background: #888; /* 핸들의 배경색 */
+    background: #cad4de; /* 핸들의 배경색 */
+    border-radius: 20px;
 }
 
 /* 스크롤바 핸들을 호버했을 때의 스타일 */
 .MainPage::-webkit-scrollbar-thumb:hover {
-    background: #555; /* 호버 시 핸들의 배경색 */
+    background: #090505; /* 호버 시 핸들의 배경색 */
 }
 
 

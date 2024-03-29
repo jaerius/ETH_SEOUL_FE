@@ -8,6 +8,7 @@ import { ethers } from "ethers";
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useWallet } from '../../WalletContext';
 
 // 1. 지갑 모듈
 const wallets = [injectedModule()];
@@ -61,31 +62,32 @@ function LoginPage() {
     
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const navigate = useNavigate();
-
+  const { walletAddress, setWalletAddress } = useWallet();
 
   useEffect(() => {
     if (wallet) {
-      // Now we are sure that wallet object is available
-      const walletAddress = wallet.accounts[0].address
-
+      const address = wallet.accounts[0].address;
+      setWalletAddress(address); // 상태 업데이트
+    }
+  }, [wallet]); // wallet 변경 시 이 effect가 실행됩니다.
+  
+  useEffect(() => {
+    if (walletAddress) { // walletAddress 상태가 유효할 때 실행
+      console.log(walletAddress); // 이제 업데이트된 상태로 출력됩니다.
       axios.post('/api/user/login', { address: walletAddress })
         .then(response => {
-          // 백엔드에서 응답 받음
           if (response.data._id) {
-            // 등록된 주소일 경우
             navigate('../Mainpage/Mainpage');
           } else {
-            // 등록되지 않은 주소일 경우
-            navigate('/RegisterPage');
+            navigate('/RegisterPage', { state: { walletAddress } });
           }
         })
         .catch(error => {
-          error.navigate('/RegisterPage')
+          console.error("Failed to login:", error);
+          navigate('/RegisterPage');
         });
-      // 월렛 주소 백으로 보내주기
-      //
     }
-  }, [wallet]);
+  }, [walletAddress]);
 
   let ethersProvider;
   if (wallet) {

@@ -1,10 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css'; // Ensure you link the correct CSS file
+import { useLocation } from 'react-router-dom';
+import { useWallet } from '../../WalletContext';
+
 
 function RegisterPage() {
 
     const navigate = useNavigate();
+    const { walletAddress, setWalletAddress } = useWallet();
+    console.log(walletAddress)
+    
 
         return (
             <div className="LoginPage">

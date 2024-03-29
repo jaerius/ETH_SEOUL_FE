@@ -16,10 +16,10 @@
     margin-bottom: 5px;
   }
   
-  .nav-button1,
-  .nav-button2,
-  .nav-button3,
-  .nav-button4 {
+  .bottom-sidebar .nav-button1,
+  .bottom-sidebar .nav-button2,
+  .bottom-sidebar .nav-button3,
+  .bottom-sidebar .nav-button4 {
     background: none;
     border: none;
     font-size: 12px; /* 글자의 크기를 14px로 조절합니다 */
