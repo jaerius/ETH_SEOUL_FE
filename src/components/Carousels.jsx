@@ -1,9 +1,6 @@
 import { Carousel } from '@mantine/carousel';
-import { useMediaQuery } from '@mantine/hooks';
-import { Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core';
-import './Carousels.css'
-
-
+import { Paper, Text, Title, Button } from '@mantine/core';
+import './Carousels.css';
 
 function Card({ image, title, category }) {
   return (
@@ -11,17 +8,15 @@ function Card({ image, title, category }) {
       shadow="md"
       p="xl"
       radius="md"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}
       className="card"
     >
-      <div>
-        <Text className="category" size="xs">
-          {category}
-        </Text>
-        <Title order={3} className="title">
-          {title}
-        </Title>
-      </div>
+      <Text className="category" size="xs">
+        {category}
+      </Text>
+      <Title order={5} className="title">
+        {title}
+      </Title>
       <Button variant="white" color="dark">
         Read article
       </Button>
@@ -69,22 +64,24 @@ const data = [
 ];
 
 export default function CardsCarousel() {
-  const theme = useMantineTheme();
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  const slides = data.map((item) => (
-    <Carousel.Slide key={item.title}>
-      <Card {...item} />
-    </Carousel.Slide>
-  ));
-
-  return (
-    <Carousel
-      slideSize={{ base: '100%', sm: '50%' }}
-      slideGap={{ base: rem(2), sm: 'xl' }}
-      align="start"
-      slidesToScroll={mobile ? 1 : 2}
-    >
-      {slides}
-    </Carousel>
-  );
-}
+    const slides = data.map((item) => (
+      <Carousel.Slide key={item.title}>
+        <Card {...item} />
+      </Carousel.Slide>
+    ));
+  
+    return (
+      <Carousel
+        withIndicators
+        slideSize="10%" // 100% / 3 slides per view
+        breakpoints={[{ maxWidth: 'md', slideSize: '33%' }, { maxWidth: 'sm', slideSize: '100%' }]}
+        align="start"
+        slidesToScroll={1}
+        className="my-carousel"
+      >
+        {slides}
+      </Carousel>
+    );
+  }
+  
+  

@@ -12,6 +12,8 @@ import './App.css';
 import RegisterPage from "./pages/LoginPage/RegisterPage";
 import { MantineProvider } from '@mantine/core';
 
+
+
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(true);
