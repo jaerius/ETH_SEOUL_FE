@@ -5,7 +5,7 @@
 
 
 .MyCommunity{
-
+  margin:5px;
 }
 
 .MyCommunityTitle{
@@ -41,10 +41,36 @@
 .CommunityName{
   display: flex; /* Flexbox 레이아웃 사용 */
   height:30%;
-  bordre-top :2px;
+  border-top :2px;
+  font-size:10px;
 }
 
 .element {
   overflow: hidden; /* 슬라이드 바를 숨김 */
+}
+
+.slick-slide div {
+  margin: 0 10px; /* 좌우 마진을 줍니다. */
+}
+
+.CommunityRankingContainer{
+  margin-top:60px;
+}
+
+.CommunityRankingTitle{
+  margin:5px;
+  margin-bottom: -3px;
+  font-size:20px;
+  font-weight: bold;
+}
+
+.CommunityRankinginput{
+  margin-top: 20px;
+    width: 90%;
+    padding: 0.5rem;
+    
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    margin-bottom: -20px;
 }
 

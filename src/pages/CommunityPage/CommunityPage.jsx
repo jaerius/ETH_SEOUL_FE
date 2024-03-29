@@ -7,27 +7,26 @@ import Headers from '../../Layout/Header'
 
 
 const communityData = [
-  { id: 1, CommunityName: "Community 1", MyCommunityImg: "MyCommunityImg1" },
-  { id: 2, CommunityName: "Community 2", MyCommunityImg: "MyCommunityImg2" },
-  { id: 3, CommunityName: "Community 3", MyCommunityImg: "MyCommunityImg3" },
-  { id: 4, CommunityName: "Community 4", MyCommunityImg: "MyCommunityImg4" },
-  { id: 5, CommunityName: "Community 5", MyCommunityImg: "MyCommunityImg5" },
-  { id: 6, CommunityName: "Community 6", MyCommunityImg: "MyCommunityImg6" },
-  { id: 7, CommunityName: "Community 7", MyCommunityImg: "MyCommunityImg7" },
-  { id: 8, CommunityName: "Community 8", MyCommunityImg: "MyCommunityImg8" },
-  { id: 9, CommunityName: "Community 9", MyCommunityImg: "MyCommunityImg9" },
-  { id: 10, CommunityName: "Community 10", MyCommunityImg: "MyCommunityImg10" }
+  { id: 1, CommunityName: "Community 1", MyCommunityImg: "" },
+  { id: 2, CommunityName: "Community 2", MyCommunityImg: "" },
+  { id: 3, CommunityName: "Community 3", MyCommunityImg: "" },
+  { id: 4, CommunityName: "Community 4", MyCommunityImg: "" },
+  { id: 5, CommunityName: "Community 5", MyCommunityImg: "" },
+  { id: 6, CommunityName: "Community 6", MyCommunityImg: "" },
+  { id: 7, CommunityName: "Community 7", MyCommunityImg: "" },
+  { id: 8, CommunityName: "Community 8", MyCommunityImg: "" },
+  { id: 9, CommunityName: "Community 9", MyCommunityImg: "" },
+  { id: 10, CommunityName: "Community 10", MyCommunityImg: "" }
 ];
 
 
 export default function CommunityPage() {
-  const settings = {
-     
+   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 1024,
@@ -66,6 +65,26 @@ export default function CommunityPage() {
             ))}
           </Slider>
         </div>
+
+        <div className="CommunityRankingContainer">
+          <div className="CommunityRankingTitle">Community Ranking</div>
+          <input type="text" placeholder="Type here" className="CommunityRankinginput" />
+          <div className="MainPage">    
+          {communityData.map((community) => (
+            <div key={community.id} className="Artistcontents">
+                <div className="ProfileImg">
+                {community.MyCommunityImg} {/* 이 부분에 실제 이미지 태그나 경로를 사용할 수 있습니다. */}
+                </div>
+                <div className="info">
+                <div className="name">
+                    {community.CommunityName}
+                </div>
+                </div>
+            </div>
+            ))}
+          </div>
+        </div>
+        
       </div>
     </ContentWrapper>
   );
