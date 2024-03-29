@@ -5,8 +5,9 @@ import LoginPage from "./pages/LoginPage/LoginPage"
 import MainPage from "./pages/MainPage/MainPage"
 import UserPage from "./pages/VotePage/VotePage"
 import VotePage from "./pages/UserPage/UserPage"
+import ChatPage from "./pages/ChatPage/ChatPage"
+import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import './App.css';
-
 
 function App() {
 
@@ -29,6 +30,13 @@ function App() {
             <Route path="/VotePage" element={isLoggedIn ? <VotePage /> : <Navigate replace to="/LoginPage" />} />
           </Routes>
         </Router>
+
+          <div className="bottom-sidebar">
+              <button className="nav-button1" onClick={<MainPage />}>Home</button>
+              <button className="nav-button2" onClick={<ChatPage/>}>Chat</button>
+              <button className="nav-button3" onClick={<CommunityPage/>}>Community</button>
+              <button className="nav-button4" onClick={<VotePage/>}>Vote</button>
+          </div>
         </div>
   );
 }
