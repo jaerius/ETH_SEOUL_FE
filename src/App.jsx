@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from "./pages/LoginPage/LoginPage"
 import MainPage from "./pages/MainPage/MainPage"
-import UserPage from "./pages/VotePage/VotePage"
-import VotePage from "./pages/UserPage/UserPage"
+import UserPage from "./pages/UserPage/UserPage"
+import VotePage from "./pages/VotePage/VotePage"
 import ChatPage from "./pages/ChatPage/ChatPage"
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import Sidebar from "./Layout/Sidebar"
@@ -35,7 +35,7 @@ function App() {
             <Route path="/RegisterPage" element={<RegisterPage/>}/>
             <Route path="/CommunityPage" element={<CommunityPage/>}/>
             <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
-            <Route path="/VotePage" element={isLoggedIn ? <VotePage /> : <Navigate replace to="/LoginPage" />} />
+            <Route path="/VotePage" element={<VotePage/>}/>
           </Routes>
         </Router>
 
