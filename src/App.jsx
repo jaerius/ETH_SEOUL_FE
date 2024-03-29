@@ -12,13 +12,13 @@ import './App.css';
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     // Here you could check for a token in localStorage or make an API call to verify the user session
     // For demonstration, let's assume we check if a "userToken" exists in localStorage
     const userToken = localStorage.getItem('userToken');
-    setIsLoggedIn(!!userToken);
+    //setIsLoggedIn(!!userToken);
   }, []);
 
   return (
