@@ -5,7 +5,11 @@ import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Compon
 function MainPage() {
     return (
         <div className="MainPage">
-            <ContentWrapper></ContentWrapper>
+            <ContentWrapper>
+            <GoBack/>
+                
+            </ContentWrapper>
+            <BottomSidebar/>
         </div>
     )
 }

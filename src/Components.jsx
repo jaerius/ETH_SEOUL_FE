@@ -4,9 +4,18 @@ import { useNavigate } from 'react-router-dom';
 // GoBack 컴포넌트
 export const GoBack = () => {
   const navigate = useNavigate();
-  return <button onClick={() => navigate(-1)}>Go Back</button>;
+
+  return (
+    <button 
+      onClick={() => navigate(-1)}
+      className="GoBack"
+    >
+      {"<"}
+    </button>
+  );
 };
 
+ 
 // BottomSidebar 컴포넌트
 export const BottomSidebar = () => {
   const navigate = useNavigate();
