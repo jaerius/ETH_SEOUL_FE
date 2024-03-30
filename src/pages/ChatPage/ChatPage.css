@@ -1,0 +1,103 @@
+.Chats{
+    color: white;
+    font-size: 20px;
+    margin-top: 5vh;
+    margin-bottom: -8px;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: start;
+    margin-right: 270px;
+    
+} 
+
+.ChatPage .Artistcontents{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ced4da;
+  margin-top: -10px;
+  width: 52vw;
+    
+}
+
+
+.ChatPage .ProfileImg{
+     /* Assuming the profile images are square */
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  background-color: #dee2e6; /* Placeholder color, replace with actual image */
+  border-radius: 50%;
+  margin-right: 1rem;/* Flexbox 컨테이너로 만들어 주석 내용 적용 */
+}
+
+.ChatPage .info {
+    flex-grow: 1;
+  }
+
+  .ChatPage .name, .agency {
+    /* 여기서 align-self: stretch는 불필요합니다. */
+    width: 100%; /* 부모 컨테이너의 너비를 채우도록 설정합니다. */
+    justify-content: flex-start; /* 요소들을 컨테이너의 왼쪽으로 정렬 */
+}
+
+.ChatPage .name {
+    flex: 4; /* info 내에서 name이 agency의 두 배의 크기를 가짐 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    font-size:20px;
+
+}
+
+.ChatPage .agency {
+    flex: 1; /* name에 비해 절반 크기 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    font-size:15px;
+    color: grey
+
+}
+.ChatPage {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 80vw; /* or your preferred width */
+    margin: 25px auto 0;
+    overflow: auto;
+    font-family: 'Pretendard', sans-serif;
+    overflow-y: scroll;
+    max-height: 75vh;
+    margin-top: 10px;
+
+  }
+
+  .rank-bar {
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #4dabf7, #1864ab);
+    width: 66.67%; /* 컨테이너의 3분의 2에 해당하는 너비로 조정 */
+  }
+  
+/* 스크롤바 전체 컨테이너를 위한 스타일 */
+.ChatPage::-webkit-scrollbar {
+    width: 11px; /* 스크롤바의 너비 */
+    
+}
+
+/* 스크롤바 트랙(바탕)을 위한 스타일 */
+.ChatPage::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 트랙의 배경색 */
+}
+
+/* 스크롤바 핸들(움직이는 부분)을 위한 스타일 */
+.ChatPage::-webkit-scrollbar-thumb {
+    background: #cad4de; /* 핸들의 배경색 */
+    border-radius: 20px;
+}
+
+/* 스크롤바 핸들을 호버했을 때의 스타일 */
+.ChatPage::-webkit-scrollbar-thumb:hover {
+    background: #090505; /* 호버 시 핸들의 배경색 */
+}
+
+

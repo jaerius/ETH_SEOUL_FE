@@ -76,8 +76,9 @@
     overflow: auto;
     font-family: 'Pretendard', sans-serif;
     overflow-y: scroll;
-    max-height: 40vh;
+    max-height: 80vh;
     margin-top: 40px;
+    background-color: red;
 
   }
 

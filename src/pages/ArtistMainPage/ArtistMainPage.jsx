@@ -15,7 +15,8 @@ function ArtistMainPage() {
             <div className='ArtistMainPageidolImg'>
                 {idolData[0].Img}
             </div>
-            <div className='ArtistMainPageidolInfo'>
+            <div className='content-wrapper'>
+            <div className='ArtistMainPageGlass'>
                 <div className='ArtistMainPageidolname'>
                     {idolData[0].Name}
                 </div>
@@ -33,6 +34,7 @@ function ArtistMainPage() {
                 </button>
             </div>
             <div className="ArtistMainPageContent">
+            </div>
             </div>
         </div>
     </ContentWrapper>

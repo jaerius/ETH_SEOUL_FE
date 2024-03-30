@@ -37,6 +37,7 @@ function App() {
             <Route path="/CommunityPage" element={<CommunityPage/>}/>
             <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
             <Route path="/VotePage" element={<VotePage/>}/>
+            <Route path="/ChatPage" element={<ChatPage/>}/>
             <Route path="/ArtistMainPage" element={<ArtistMainPage/>}/>
           </Routes>
         </Router>
