@@ -19,9 +19,6 @@ const idolsData = [
     { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profileImg: "" }
   ];
 
-  
-
- 
 
   export default function ChatPage() {
     const navigate = useNavigate();
