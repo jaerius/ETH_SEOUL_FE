@@ -3,17 +3,21 @@
 .CommunityDetail{
     width:100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    position: relative;
+    padding-bottom: 0;
+    overflow:hidden;
+    scrollbar-width: none;
   }
 
 .CommunityDetail .CommunityImg{
-    display: flex;
+ display: flex;
   width: 400px;
-  height: 300px;
+  height: 500px;
   justify-content: center;
   align-items: center;
   border-color: transparent;
@@ -24,6 +28,7 @@
     font-family: 'Pretendard';
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: -60px;
 }
 
 .CommunityDetail .gotoVote{
@@ -37,5 +42,103 @@
     background-image: linear-gradient(to bottom right, #FFFFFF, #BBCEFF);
     color: #676161ea;
     outline: none;
-    margin-bottom : 200px;
+    margin-bottom : 0px;
+    position: absolute; /* Add this line */
+    bottom: 0px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+.CommunityDetail .CommunityTab {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 80vw;
+    margin: 25px auto 0;
+    overflow: auto;
+    font-family: 'Pretendard', sans-serif;
+    overflow-y: scroll;
+    max-height: 40vh;
+    display: flex; /* Flex 컨테이너로 설정 */
+    flex-direction: column; /* 요소들을 세로로 쌓음 */
+    align-items: center; /* 세로 방향의 중앙 정렬을 위해 */
+  }
+
+.CommunityDetail .CommunityTab .Artistcontents{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ced4da;
+  margin-top: -10px;
+  width: 52vw;
+
+}
+
+.CommunityDetail .CommunityTab .ProfileImg{
+     /* Assuming the profile images are square */
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  background-color: #dee2e6; /* Placeholder color, replace with actual image */
+  border-radius: 50%;
+  margin-right: 1rem;/* Flexbox 컨테이너로 만들어 주석 내용 적용 */
+}
+
+.CommunityDetail .CommunityTab .info {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 0.5rem 0;
+  }
+  
+  .CommunityDetail .CommunityTab .info .nameAgencyWrapper {
+    display: flex; /* Enable flex layout */
+    gap: 5px; /* This creates a small fixed gap between name and agency */
+  }
+  
+  .CommunityDetail .CommunityTab .name, .CommunityDetail .CommunityTab .agency {
+    margin: 0; /* Remove margin-right and let gap handle the spacing */
+  }
+  
+  .CommunityDetail .CommunityTab .content {
+    margin-top: 4px; /* Spacing between content and the name/agency line */
+  }
+  
+.CommunityDetail .CommunityTab {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 80vw; /* or your preferred width */
+    margin: 25px auto 0;
+    overflow: auto;
+    font-family: 'Pretendard', sans-serif;
+    overflow-y: scroll;
+    max-height: 40vh;
+
+  }
+
+  .rank-bar {
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #4dabf7, #1864ab);
+    width: 66.67%; /* 컨테이너의 3분의 2에 해당하는 너비로 조정 */
+  }
+  
+/* 스크롤바 전체 컨테이너를 위한 스타일 */
+.CommunityDetail::-webkit-scrollbar {
+    width: 11px; /* 스크롤바의 너비 */
+    display:none;
+}
+
+/* 스크롤바 트랙(바탕)을 위한 스타일 */
+.CommunityDetail::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 트랙의 배경색 */
+}
+
+/* 스크롤바 핸들(움직이는 부분)을 위한 스타일 */
+.CommunityDetail::-webkit-scrollbar-thumb {
+    background: #cad4de; /* 핸들의 배경색 */
+    border-radius: 20px;
+}
+
+/* 스크롤바 핸들을 호버했을 때의 스타일 */
+.CommunityDetail::-webkit-scrollbar-thumb:hover {
+    background: #090505; /* 호버 시 핸들의 배경색 */
 }
