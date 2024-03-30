@@ -18,10 +18,10 @@ function RegisterPage() {
     const handleCreateAccountClick = () => {
         if (walletAddress) { // walletAddress 상태가 유효할 때 실행
             console.log(walletAddress); // 이제 업데이트된 상태로 출력됩니다.
-            axios.post('/api/user/register', { nickname: nickname, walletAddress: walletAddress })
+            axios.post('http://localhost:8800/api/user/register', { nickname: nickname, walletAddress: walletAddress })
               .then(response => {
                 if (response.data._id) {
-                  navigate('../Mainpage/Mainpage');
+                  navigate('/');
                 } else {
                   navigate('/RegisterPage', { state: { walletAddress } });
                 }

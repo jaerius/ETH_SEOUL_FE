@@ -74,10 +74,10 @@ function LoginPage() {
   useEffect(() => {
     if (walletAddress) { // walletAddress 상태가 유효할 때 실행
       console.log(walletAddress); // 이제 업데이트된 상태로 출력됩니다.
-      axios.post('/api/user/login', { address: walletAddress })
+      axios.post('http://localhost:8800/api/user/login', {  walletAddress: walletAddress })
         .then(response => {
-          if (response.data._id) {
-            navigate('../Mainpage/Mainpage');
+          if (response.data.nickname) {
+            navigate('/');
           } else {
             navigate('/RegisterPage', { state: { walletAddress } });
           }
