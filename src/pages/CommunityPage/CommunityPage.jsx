@@ -27,7 +27,7 @@ export default function CommunityPage() {
   const navigate = useNavigate(); // Hook to get the navigate function
 
   const handleCommunityClick = (communityId) => {
-    navigate(`/Community/${communityId}`); // Navigate to CommunityMain with the community ID
+    navigate(`/CommunityDetail/${communityId}`); // Navigate to CommunityMain with the community ID
   };
 
    const settings = {

@@ -7,6 +7,7 @@ import UserPage from "./pages/UserPage/UserPage"
 import VotePage from "./pages/VotePage/VotePage"
 import ChatPage from "./pages/ChatPage/ChatPage"
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
+import CommunityDetail from './pages/CommunityPage/CommunityDetail';
 import ArtistMainPage from './pages/ArtistMainPage/ArtistMainPage';
 import Sidebar from "./Layout/Sidebar"
 import './App.css';
@@ -35,6 +36,7 @@ function App() {
             <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/RegisterPage" element={<RegisterPage/>}/>
             <Route path="/CommunityPage" element={<CommunityPage/>}/>
+            <Route path="/CommunityDetail/:id" element={<CommunityDetail />} />
             <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
             <Route path="/VotePage" element={<VotePage/>}/>
             <Route path="/ChatPage" element={<ChatPage/>}/>
