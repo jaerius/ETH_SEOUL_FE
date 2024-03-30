@@ -2,6 +2,7 @@ import './ArtistMainPage.css'
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
 import React from 'react';
 import Sidebar from '../../Layout/Sidebar';
+import MyLineChart from '../../components/Line';
 
 const idolsData = [
     { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "", vote:2.97 },
@@ -25,7 +26,7 @@ function ArtistMainPage() {
             <div className='ArtistMainPageidolImg'>
                 {idolsData[0].Img}
             </div>
-            <div className='content-wrapper'>
+         <div className='content-wrapper'>
             <div className='ArtistMainPageGlass'>
                 <div className='ArtistMainPageidolname'>
                     {idolsData[0].name}
@@ -43,6 +44,11 @@ function ArtistMainPage() {
                     Vote
                 </button>
             </div>
+
+           <div className="graphContainer">
+                <MyLineChart/>
+            </div> 
+
             <div className="ArtistMainPageContent">
 
                 <div className="RappoTitle">Rappo Ranking</div>
