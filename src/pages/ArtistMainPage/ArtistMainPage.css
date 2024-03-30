@@ -7,15 +7,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .ArtistMainPageidolImg{
     background-color: lightblue;
     display:flex;
-    width:100%;
+    width:400px;
     height: 300px;
     justify-content: center;
     align-items: center;
+    border-color: transparent;
 }
 
 .content-wrapper .ArtistMainPageGlass{
@@ -25,42 +27,118 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 300px;
+    width: 320px;
     height: 200px;
-    left: calc(50% - 297px/2);
+    /*left: calc(50% - 297px/2);*/
     top: -13vh;/*calc(50% - 334px/2-150px);*/
     
     background: radial-gradient(89.39% 90.42% at 12.46% 9.58%, rgba(255, 255, 255, 0.025) 0%, rgba(255, 252, 242, 0.025) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     border: 1px solid #F0EEF2;
     box-shadow: 0px 5px 22.4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(25px);
+    backdrop-filter: blur(1px);
     /* Note: backdrop-filter has minimal browser support */
-    border-radius: 58px;
+    border-radius: 25px;
     
 }
 
 .ArtistMainPageidolname{
-    background-color: red;
+    font-size: 30px;
     font-family: 'Pretendard';
     color: white;
     font-weight: bold;
 }
 
 .ArtistMainPageidolagency{
-    background-color: blue;
+   
+    font-family: 'Pretendard';
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
 }
 
+
 .TotalVotedTitle{
-    background-color: red;
+    font-family: 'Pretendard';
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
 }
 
 .TotalVote{
-    background-color: blue;
+    font-family: 'Pretendard';
+    color: rgb(230, 152, 7);
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    /*color: linear-gradient(to bottom right, #FF9B9B, #CF7726);*/
 }
 
-.VoteButton{
-
-}
-
+.VoteButton {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, #FFFFFF, #BBCEFF);
+    color: #676161ea;
+    outline: none;
+    margin-top : 10px;
+     
+  }
+ 
 .ArtistMainPageContent{
+
+    .RappoTitle{
+        margin-top: 170px;
+        font-size: large;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .RappoRanking {
+        background: transparent;
+        padding: 1rem;
+        border-radius: 8px;
+        max-width: 80vw; /* or your preferred width */
+        margin: 25px auto 0;
+        overflow: auto;
+        font-family: 'Pretendard', sans-serif;
+        overflow-y: scroll;
+        max-height: 10vh;
+        margin-bottom: 30px;
+        margin-top: 10px;
+       
+        
+      } 
+      .rank-bar {
+        height: 3px;
+        border-radius: 10px;
+        background: linear-gradient(to right, #4dabf7, #1864ab);
+        width: 66.67%; /* 컨테이너의 3분의 2에 해당하는 너비로 조정 */
+      }
+      
+    /* 스크롤바 전체 컨테이너를 위한 스타일 */
+    .RappoRanking::-webkit-scrollbar {
+        width: 11px; /* 스크롤바의 너비 */
+    }
+    
+    /* 스크롤바 트랙(바탕)을 위한 스타일 */
+    .RappoRanking::-webkit-scrollbar-track {
+        background: #f1f1f1; /* 트랙의 배경색 */
+    }
+    
+    /* 스크롤바 핸들(움직이는 부분)을 위한 스타일 */
+    .RappoRanking::-webkit-scrollbar-thumb {
+        background: #cad4de; /* 핸들의 배경색 */
+        border-radius: 20px;
+    }
+    
+    /* 스크롤바 핸들을 호버했을 때의 스타일 */
+    .RappoRanking::-webkit-scrollbar-thumb:hover {
+        background: #090505; /* 호버 시 핸들의 배경색 */
+    }
+
+    
 }
