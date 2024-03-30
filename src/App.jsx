@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage"
 import UserPage from "./pages/UserPage/UserPage"
 import VotePage from "./pages/VotePage/VotePage"
 import ChatPage from "./pages/ChatPage/ChatPage"
+import MyPage from "./pages/MyPage/MyPage"
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import CommunityDetail from './pages/CommunityPage/CommunityDetail';
 import ArtistMainPage from './pages/ArtistMainPage/ArtistMainPage';
@@ -41,6 +42,7 @@ function App() {
             <Route path="/VotePage" element={<VotePage/>}/>
             <Route path="/ChatPage" element={<ChatPage/>}/>
             <Route path="/ArtistMainPage" element={<ArtistMainPage/>}/>
+            <Route path="/MyPage" element={<MyPage/>}/>
           </Routes>
         </Router>
 

@@ -1,0 +1,41 @@
+.profile{
+    background-color: black;
+    width: 95%;
+    height: 70px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.profileImg{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width:20%;
+    height: 100%;
+    background-color: red;
+}
+
+.profileInfo{
+    align-items: center;
+    display: flex;
+    width:80%;
+    height: 100%;
+    background-color: blue;
+}
+
+.profileWallet{
+    display: flex;
+    background-color: white;
+    width:95%;
+    height: 35%;
+    margin : 5px;
+    border-radius: 30px;
+}
+
+.profileWalletTitle{
+    margin-left: 20px;
+    margin-top:20px;
+}
