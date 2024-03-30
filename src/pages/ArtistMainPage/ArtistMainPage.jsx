@@ -8,6 +8,7 @@ const idolData =[
 
 function ArtistMainPage() {
 
+    
     return(
     <ContentWrapper>
         <div className="ArtistMainPage">
