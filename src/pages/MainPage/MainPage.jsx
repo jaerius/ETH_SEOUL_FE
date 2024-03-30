@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
 import './MainPage.css';
 import Headers from '../../Layout/Header'
 import Sidebar from '../../Layout/Sidebar';
+import axios from 'axios';
 
+/*
 const idolsData = [
-  { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "" },
-  { id: 2, name: "Park Jimin", agency: "BTS", profileImg: "" },
-  { id: 3, name: "Kang Daniel", agency: "KONNECT Entertainment", profileImg: "" },
-  { id: 4, name: "Lee Chaeyeon", agency: "WM Entertainment", profileImg: "" },
-  { id: 5, name: "Miyawaki Sakura", agency: "HKT48", profileImg: "" },
-  { id: 6, name: "Choi Yena", agency: "Yuehua Entertainment", profileImg: "" },
-  { id: 7, name: "Kwon Eunbi", agency: "Woollim Entertainment", profileImg: "" },
-  { id: 8, name: "Kim Minju", agency: "Urban Works Media", profileImg: "" },
-  { id: 9, name: "Ahn Yujin", agency: "Starship Entertainment", profileImg: "" },
-  { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profileImg: "" }
+  { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profilePic: "" },
+  { id: 2, name: "Park Jimin", agency: "BTS", profilePic: "" },
+  { id: 3, name: "Kang Daniel", agency: "KONNECT Entertainment", profilePic: "" },
+  { id: 4, name: "Lee Chaeyeon", agency: "WM Entertainment", profilePic: "" },
+  { id: 5, name: "Miyawaki Sakura", agency: "HKT48", profilePic: "" },
+  { id: 6, name: "Choi Yena", agency: "Yuehua Entertainment", profilePic: "" },
+  { id: 7, name: "Kwon Eunbi", agency: "Woollim Entertainment", profilePic: "" },
+  { id: 8, name: "Kim Minju", agency: "Urban Works Media", profilePic: "" },
+  { id: 9, name: "Ahn Yujin", agency: "Starship Entertainment", profilePic: "" },
+  { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profilePic: "" }
 ];
+*/
 
 export default function ArtistPage() {
+
   // 사용자 입력을 추적할 상태 생성
   const [searchTerm, setSearchTerm] = useState('');
+  const [idolsData, setIdolsData] = useState([]);
+
+  useEffect(() => {
+    axios.put('http://localhost:8800/api/idol/rank')
+      .then(response => {
+        setIdolsData(response.data); // 서버로부터 받아온 데이터를 상태에 저장
+      })
+      .catch(error => {
+        console.error("Failed to get ranks", error);
+      });
+  }, []);
 
   // 사용자 입력을 업데이트하는 함수
   const handleSearchChange = (e) => {
@@ -28,10 +43,14 @@ export default function ArtistPage() {
   };
 
   // 사용자 입력에 따라 idolsData 필터링
+  
   const filteredIdols = idolsData.filter(idol => 
     idol.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
     idol.agency.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
+
+  
 
   return (
     <ContentWrapper>
@@ -47,9 +66,9 @@ export default function ArtistPage() {
       <div className="MainPage">
         {filteredIdols.map(idol => (
           <div key={idol.id} className="Artistcontents">
-            <div className="ProfileImg">
-              {idol.profileImg} {/* 이미지 태그나 경로를 여기에 사용 */}
-            </div>
+            
+                <img className="ProfileImg" src={idol.profilePic}/>{/* 이미지 태그나 경로를 여기에 사용 */}
+            
             <div className="info">
               <div className="name">{idol.name}</div>
               <div className="agency">{idol.agency}</div>
