@@ -4,6 +4,8 @@ import Slider from 'react-slick'; // Slider 컴포넌트 import
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
 import Headers from '../../Layout/Header';
 import './CommunityPage.css';
+import Sidebar from '../../Layout/Sidebar';
+import Header from '../../Layout/Header';
 
 
 const communityData = [
@@ -59,6 +61,7 @@ export default function CommunityPage() {
   
   return (
     <ContentWrapper>
+      <Header/>
       <div className="CommunityPage">
         <div className="MyCommunity">
           <div className="MyCommunityTitle">My Community</div>
@@ -100,6 +103,7 @@ export default function CommunityPage() {
         </div>
         
       </div>
+      <Sidebar/>
     </ContentWrapper>
   );
 }

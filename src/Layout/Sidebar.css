@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
-    width: 310px; /* .content-wrapper의 padding을 고려한 너비 */
+    width: 400px; /* .content-wrapper의 padding을 고려한 너비 */
     height: 80px; /* 원하는 높이입니다 */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
