@@ -27,6 +27,7 @@ export default function ArtistPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [idolsData, setIdolsData] = useState([]);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     axios.put('http://localhost:8800/api/idol/rank')
@@ -56,27 +57,31 @@ export default function ArtistPage() {
   return (
     <ContentWrapper>
       <Headers/>
-      <div className="FancyRanking">Fancy Ranking</div>
-      <input 
-        type="text" 
-        placeholder="Type here" 
-        className="input" 
-        value={searchTerm}
-        onChange={handleSearchChange} // 입력 필드가 변경될 때마다 handleSearchChange 호출
-      />
+        <div className="FavPickRanking">FavPick Ranking</div>
+        <input 
+          type="text" 
+          placeholder="Type here" 
+          className="input" 
+          value={searchTerm}
+          onChange={handleSearchChange} // 입력 필드가 변경될 때마다 handleSearchChange 호출
+        />
         <div className="MainPage">        
-        {filteredIdols.map(idol => (
-          <div key={idol.id} className="Artistcontents" onClick={() => navigate(`/ArtistMainPage/${idol.idolId}`, { state: { idol } })}>
-            
-                <img className="ProfileImg" src={idol.profilePic} alt={idol.name}/>{/* 이미지 태그나 경로를 여기에 사용 */}
-            
-            <div className="info">
-              <div className="name">{idol.name}</div>
-              <div className="agency">{idol.agency}</div>
+          {filteredIdols.map((idol, index) => (
+            <div key={idol.id} className="Artistcontents" onClick={() => navigate(`/ArtistMainPage/${idol.idolId}`, { state: { idol } })}>
+              <div className="RankingNum">{index+1}</div>
+              <img className="ProfileImg" src={idol.profilePic} alt={idol.name}/>
+              <div className="info">
+                <div className="name">{idol.name}</div>
+                <div className="agency">{idol.agency}</div>
+              </div>
+              <div className='VoteBarContainer'>
+              <div className='VoteBar' style={{ width: `${Math.min(idol.totalTokens, 100) * 100 / 100}%` }}></div>
+                <div className='VoteCount'>{idol.totalTokens} votes</div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+
       <Sidebar/>
     </ContentWrapper>
   );
