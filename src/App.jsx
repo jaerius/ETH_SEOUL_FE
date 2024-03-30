@@ -41,7 +41,7 @@ function App() {
             <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
             <Route path="/VotePage" element={<VotePage/>}/>
             <Route path="/ChatPage" element={<ChatPage/>}/>
-            <Route path="/ArtistMainPage" element={<ArtistMainPage/>}/>
+            <Route path="/ArtistMainPage/:idolId" element={<ArtistMainPage/>}/>
             <Route path="/MyPage" element={<MyPage/>}/>
           </Routes>
         </Router>

@@ -1,9 +1,14 @@
 import './ArtistMainPage.css'
 import { GoBack, BottomSidebar, ContentWrapper, LogoAndHead } from '../../Components';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 import React from 'react';
 import Sidebar from '../../Layout/Sidebar';
 import MyLineChart from '../../components/Line';
+import { useLocation } from 'react-router-dom';
 
+
+/*
 const idolsData = [
     { id: 1, name: "Kim Chewon", agency: "LE SSERAFIM", profileImg: "", vote:2.97 },
     { id: 2, name: "Park Jimin", agency: "BTS", profileImg: "" },
@@ -16,29 +21,48 @@ const idolsData = [
     { id: 9, name: "Ahn Yujin", agency: "Starship Entertainment", profileImg: "" },
     { id: 10, name: "Jang Wonyoung", agency: "Starship Entertainment", profileImg: "" }
   ];
+*/
+
 
 function ArtistMainPage() {
+    const location = useLocation();
+    const idolDataFromPreviousPage = location.state?.idol;
+
+    const [idolData, setIdolData] = useState({});
+
+    useEffect(() => {
+        // 아이돌 정보가 존재할 때만 요청을 보냅니다.
+        if (idolDataFromPreviousPage?.id) {
+            axios.put(`http://localhost:8800/api/idol/idolProfile/${idolDataFromPreviousPage.id}`)
+            .then(response => {
+                setIdolData(response.data);
+            })
+            .catch((err) => {
+                console.error("Failed to get an idol", err);
+            });
+        }
+    }, [idolDataFromPreviousPage?.id]); 
 
 
     return(
     <ContentWrapper>
         <div className="ArtistMainPage">
-            <div className='ArtistMainPageidolImg'>
-                {idolsData[0].Img}
-            </div>
+            <img className='ArtistMainPageidolImg' src={idolDataFromPreviousPage.profilePic} alt={idolDataFromPreviousPage.name}/>
+               
+            
          <div className='content-wrapper'>
             <div className='ArtistMainPageGlass'>
                 <div className='ArtistMainPageidolname'>
-                    {idolsData[0].name}
+                    {idolDataFromPreviousPage.name}
                 </div>
                 <div className='ArtistMainPageidolagency'>
-                    {idolsData[0].agency}
+                    {idolDataFromPreviousPage.agency}
                 </div>
                 <div className='TotalVotedTitle'>
                     Total Voted Rappo
                 </div>
                 <div className='TotalVote'>
-                    {idolsData[0].vote}
+                    {idolDataFromPreviousPage.totalTokens}
                 </div>
                 <button className='VoteButton'>
                     Vote
@@ -54,21 +78,21 @@ function ArtistMainPage() {
                 <div className="RappoTitle">Rappo Ranking</div>
 
                     <div className="RappoRanking">    
-                    {idolsData.map(idolsData => (
-                    <div key={idolsData.id} className="Artistcontents1">
-                        <div className="ProfileImg">
-                        {idolsData.profileImg} {/* 이 부분에 실제 이미지 태그나 경로를 사용할 수 있습니다. */}
-                        </div>
+                    
+                    <div key={idolDataFromPreviousPage.idolId} className="Artistcontents1">
+                        
+                        <img src={idolDataFromPreviousPage.profileImg} alt={idolDataFromPreviousPage.name} /> {/* 이 부분에 실제 이미지 태그나 경로를 사용할 수 있습니다. */}
+                        
                         <div className="info">
                         <div className="name">
-                            {idolsData.name}
+                            {idolDataFromPreviousPage.name}
                         </div>
                         <div className="agency">
-                            {idolsData.agency}
+                            {idolDataFromPreviousPage.agency}
                         </div>
                         </div>
                     </div>
-                    ))}
+                    
                     </div>
             </div>
             </div>

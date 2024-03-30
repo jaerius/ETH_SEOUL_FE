@@ -26,6 +26,7 @@ export default function ArtistPage() {
   // 사용자 입력을 추적할 상태 생성
   const [searchTerm, setSearchTerm] = useState('');
   const [idolsData, setIdolsData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.put('http://localhost:8800/api/idol/rank')
@@ -63,11 +64,11 @@ export default function ArtistPage() {
         value={searchTerm}
         onChange={handleSearchChange} // 입력 필드가 변경될 때마다 handleSearchChange 호출
       />
-      <div className="MainPage">
+        <div className="MainPage">        
         {filteredIdols.map(idol => (
-          <div key={idol.id} className="Artistcontents">
+          <div key={idol.id} className="Artistcontents" onClick={() => navigate(`/ArtistMainPage/${idol.idolId}`, { state: { idol } })}>
             
-                <img className="ProfileImg" src={idol.profilePic}/>{/* 이미지 태그나 경로를 여기에 사용 */}
+                <img className="ProfileImg" src={idol.profilePic} alt={idol.name}/>{/* 이미지 태그나 경로를 여기에 사용 */}
             
             <div className="info">
               <div className="name">{idol.name}</div>
