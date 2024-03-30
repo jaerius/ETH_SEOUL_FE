@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .CommunityPage {
   width: 100%; /* 부모 컴포넌트의 폭에 맞춤 */
 
@@ -11,6 +13,10 @@
 
 .MyCommunityTitle{
   margin:5px;
+  font-family: 'Pretendard';
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
 }
 
 .MyCommunityNum{
