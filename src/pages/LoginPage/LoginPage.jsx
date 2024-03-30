@@ -63,11 +63,14 @@ function LoginPage() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const navigate = useNavigate();
   const { walletAddress, setWalletAddress } = useWallet();
+  const { walletModule, setWalletModule } = useWallet()
 
   useEffect(() => {
     if (wallet) {
       const address = wallet.accounts[0].address;
       setWalletAddress(address); // 상태 업데이트
+      setWalletModule(wallet);
+      console.log(wallet)
     }
   }, [wallet]); // wallet 변경 시 이 effect가 실행됩니다.
   

@@ -6,10 +6,11 @@ const WalletContext = createContext();
 // Context Provider 컴포넌트
 export const WalletProvider = ({ children }) => {
   const [walletAddress, setWalletAddress] = useState(null);
+  const [walletModule, setWalletModule] = useState(null)
 
   // walletAddress와 setWalletAddress를 value로 전달
   return (
-    <WalletContext.Provider value={{ walletAddress, setWalletAddress }}>
+    <WalletContext.Provider value={{ walletAddress, setWalletAddress, walletModule, setWalletModule }}>
       {children}
     </WalletContext.Provider>
   );
