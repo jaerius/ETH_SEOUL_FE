@@ -76,7 +76,8 @@ export default function ArtistPage() {
               </div>
               <div className='VoteBarContainer'>
               <div className='VoteBar' style={{ width: `${Math.min(idol.totalTokens, 100) * 100 / 100}%` }}></div>
-                <div className='VoteCount'>{idol.totalTokens} votes</div>
+                <div className='VoteCount'>{idol.totalTokens} RAPPO </div>
+                
               </div>
             </div>
           ))}
