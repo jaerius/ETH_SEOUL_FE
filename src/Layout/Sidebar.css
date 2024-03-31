@@ -3,9 +3,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
+    padding: 0.4rem 1.3rem; /* padding을 유지하면서 */
     width: 400px; /* .content-wrapper의 padding을 고려한 너비 */
-    height: 80px; /* 원하는 높이입니다 */
+    height: 50px; /* 원하는 높이입니다 */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     position: absolute; /* 절대 위치 지정 */
@@ -111,6 +111,10 @@
   }
   .nav-button4:after {
     content: "";  /* 텍스트 내용 */
+  }
+
+  .icon{
+    font-size: 30px;
   }
   
   

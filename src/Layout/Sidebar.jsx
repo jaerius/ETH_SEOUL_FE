@@ -3,16 +3,22 @@ import ChatPage from "../pages/ChatPage/ChatPage"
 import CommunityPage from "../pages/CommunityPage/CommunityPage"
 import VotePage from "../pages/VotePage/VotePage"
 import './Sidebar.css'
+import { useNavigate } from 'react-router-dom';
+import { FaHome, FaComments, FaUsers, FaVoteYea } from 'react-icons/fa'; // 아이콘 임포트
+
+
 
 const Sidebar = () => {
-    return(
-    <div className="bottom-sidebar">
-        <button className="nav-button1" onClick={<MainPage />}>Home</button>
-        <button className="nav-button2" onClick={<ChatPage/>}>Chat</button>
-        <button className="nav-button3" onClick={<CommunityPage/>}>Community</button>
-        <button className="nav-button4" onClick={<VotePage/>}>Vote</button>
-    </div>
-    )
+    const navigate = useNavigate();
+
+    return (
+        <div className="bottom-sidebar">
+            <button className="nav-button" onClick={() => navigate('/')}><FaHome className="icon" /></button>
+            <button className="nav-button" onClick={() => navigate('/ChatPage')}><FaComments className="icon" /></button>
+            <button className="nav-button" onClick={() => navigate('/CommunityPage')}><FaUsers className="icon" /></button>
+            <button className="nav-button" onClick={() => navigate('/VotePage')}><FaVoteYea className="icon" /></button>
+        </div>
+    );
 }
 
 export default Sidebar

@@ -80,7 +80,7 @@ export default function ArtistPage() {
               </div>
             </div>
           ))}
-          
+
         </div>
 
       <Sidebar/>

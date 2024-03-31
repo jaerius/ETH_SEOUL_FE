@@ -43,6 +43,7 @@ function App() {
             <Route path="/ChatPage" element={<ChatPage/>}/>
             <Route path="/ArtistMainPage/:idolId" element={<ArtistMainPage/>}/>
             <Route path="/MyPage" element={<MyPage/>}/>
+            <Route path='/MainPage' element={<MainPage/>}/>
           </Routes>
         </Router>
 
