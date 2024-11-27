@@ -1,24 +1,28 @@
-
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import LoginPage from "./pages/LoginPage/LoginPage"
-import MainPage from "./pages/MainPage/MainPage"
-import UserPage from "./pages/UserPage/UserPage"
-import VotePage from "./pages/VotePage/VotePage"
-import ChatPage from "./pages/ChatPage/ChatPage"
-import MyPage from "./pages/MyPage/MyPage"
-import CommunityPage from "./pages/CommunityPage/CommunityPage";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
+import LoginPage from './pages/LoginPage/LoginPage';
+import MainPage from './pages/MainPage/MainPage';
+import UserPage from './pages/UserPage/UserPage';
+import VotePage from './pages/VotePage/VotePage';
+import ChatPage from './pages/ChatPage/ChatPage';
+import MyPage from './pages/MyPage/MyPage';
+import CommunityPage from './pages/CommunityPage/CommunityPage';
 import CommunityDetail from './pages/CommunityPage/CommunityDetail';
 import ArtistMainPage from './pages/ArtistMainPage/ArtistMainPage';
-import Sidebar from "./Layout/Sidebar"
+import Sidebar from './Layout/Sidebar';
 import './App.css';
-import RegisterPage from "./pages/LoginPage/RegisterPage";
+import RegisterPage from './pages/LoginPage/RegisterPage';
 import { MantineProvider } from '@mantine/core';
 
-
+//testtesttest
+//testetstetse
 
 function App() {
-
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
@@ -29,35 +33,51 @@ function App() {
   }, []);
 
   return (
-      <MantineProvider>
-        <div className="Home">
+    <MantineProvider>
+      <div className="Home">
         <Router>
           <Routes>
-            <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate replace to="/LoginPage" />} />
-            <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/RegisterPage" element={<RegisterPage/>}/>
-            <Route path="/CommunityPage" element={<CommunityPage/>}/>
+            <Route
+              path="/"
+              element={
+                isLoggedIn ? <MainPage /> : <Navigate replace to="/LoginPage" />
+              }
+            />
+            <Route
+              path="/LoginPage"
+              element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
+            />
+            <Route path="/RegisterPage" element={<RegisterPage />} />
+            <Route path="/CommunityPage" element={<CommunityPage />} />
             <Route path="/CommunityDetail/:id" element={<CommunityDetail />} />
-            <Route path="/MainPage" element={isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />} />
-            <Route path="/VotePage" element={<VotePage/>}/>
-            <Route path="/ChatPage" element={<ChatPage/>}/>
-            <Route path="/ArtistMainPage/:idolId" element={<ArtistMainPage/>}/>
-            <Route path="/MyPage" element={<MyPage/>}/>
-            <Route path='/MainPage' element={<MainPage/>}/>
+            <Route
+              path="/MainPage"
+              element={
+                isLoggedIn ? <UserPage /> : <Navigate replace to="/LoginPage" />
+              }
+            />
+            <Route path="/VotePage" element={<VotePage />} />
+            <Route path="/ChatPage" element={<ChatPage />} />
+            <Route
+              path="/ArtistMainPage/:idolId"
+              element={<ArtistMainPage />}
+            />
+            <Route path="/MyPage" element={<MyPage />} />
+            <Route path="/MainPage" element={<MainPage />} />
           </Routes>
         </Router>
 
-       {/*<Sidebar/> */}
-       
-       {/*<div className="bottom-sidebar">
+        {/*<Sidebar/> */}
+
+        {/*<div className="bottom-sidebar">
               <button className="nav-button1" onClick={<MainPage />}>Home</button>
               <button className="nav-button2" onClick={<ChatPage/>}>Chat</button>
               <button className="nav-button3" onClick={<CommunityPage/>}>Community</button>
               <button className="nav-button4" onClick={<VotePage/>}>Vote</button>
           </div>
        */}
-        </div>
-      </MantineProvider>
+      </div>
+    </MantineProvider>
   );
 }
 
